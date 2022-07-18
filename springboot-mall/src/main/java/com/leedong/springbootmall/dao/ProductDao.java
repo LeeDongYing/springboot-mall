@@ -1,6 +1,6 @@
 package com.leedong.springbootmall.dao;
 
-import com.leedong.springbootmall.constant.ProductCategory;
+import com.leedong.springbootmall.dto.ProductQueryParams;
 import com.leedong.springbootmall.dto.ProductRequest;
 import com.leedong.springbootmall.model.Product;
 
@@ -15,5 +15,5 @@ public interface ProductDao {
 
     void deleteProductById(Integer productId);
 
-    List<Product> getProducts(ProductCategory category,String search);
+    List<Product> getProducts(ProductQueryParams productQueryParams);
 }

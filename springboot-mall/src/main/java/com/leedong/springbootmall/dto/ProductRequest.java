@@ -1,29 +1,23 @@
-package com.leedong.springbootmall.model;
+package com.leedong.springbootmall.dto;
 
 import com.leedong.springbootmall.constant.ProductCategory;
 
-import java.sql.Timestamp;
-import java.util.Date;
+import javax.validation.constraints.NotNull;
 
-public class Product {
+public class ProductRequest {
 
-    private Integer pruductId;
+    @NotNull
     private String productName;
+    @NotNull
     private ProductCategory category;
+    @NotNull
     private String imageUrl;
+    @NotNull
     private Integer price;
+    @NotNull
     private Integer stock;
+
     private String description;
-    private Date createdDate;
-    private Date lastModifiedDate;
-
-    public Integer getPruductId() {
-        return pruductId;
-    }
-
-    public void setPruductId(Integer pruductId) {
-        this.pruductId = pruductId;
-    }
 
     public String getProductName() {
         return productName;
@@ -71,21 +65,5 @@ public class Product {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(Date createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public Date getLastModifiedDate() {
-        return lastModifiedDate;
-    }
-
-    public void setLastModifiedDate(Date lastModifiedDate) {
-        this.lastModifiedDate = lastModifiedDate;
     }
 }

@@ -79,7 +79,7 @@ public class ProductController {
 
     @PutMapping("/products/{productId}")
     public ResponseEntity<Product> updateProduct(@PathVariable Integer productId,
-                                                 @RequestBody ProductRequest productRequest){
+                                                 @RequestBody @Valid ProductRequest productRequest){
         Product product = productService.getProductById(productId);
 
         if(product == null){

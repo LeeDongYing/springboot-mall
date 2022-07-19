@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class Product {
 
-    private Integer pruductId;
+    private Integer productId;
     private String productName;
     private ProductCategory category;
     private String imageUrl;
@@ -16,12 +16,12 @@ public class Product {
     private Date createdDate;
     private Date lastModifiedDate;
 
-    public Integer getPruductId() {
-        return pruductId;
+    public Integer getProductId() {
+        return productId;
     }
 
-    public void setPruductId(Integer pruductId) {
-        this.pruductId = pruductId;
+    public void setProductId(Integer productId) {
+        this.productId = productId;
     }
 
     public String getProductName() {

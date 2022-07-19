@@ -2,7 +2,6 @@ package com.leedong.springbootmall.model;
 
 import com.leedong.springbootmall.constant.ProductCategory;
 
-import java.sql.Timestamp;
 import java.util.Date;
 
 public class Product {

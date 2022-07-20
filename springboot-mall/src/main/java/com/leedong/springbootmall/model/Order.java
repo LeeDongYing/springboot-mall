@@ -6,8 +6,8 @@ import java.util.List;
 public class Order {
 
    private Integer orderId;
-   private Integer userId;
    private Integer totalAmount;
+    private Integer userId;
    private Date createdDate;
    private Date lastModifiedDate;
 

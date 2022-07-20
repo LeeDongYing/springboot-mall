@@ -136,18 +136,6 @@ public class ProductDaoImpl implements ProductDao {
         namedParameterJdbcTemplate.update(sql,map);
     }
 
-    private String addFilterSql(String sql,Map<String,Object> map,ProductQueryParams productQueryParams){
-        if(productQueryParams.getCategory()!=null){
-            sql += " AND category=:category";
-            map.put("category",productQueryParams.getCategory().toString());
-        }
-        if (productQueryParams.getSearch()!=null) {
-            sql += " AND product_name LIKE :search";
-            map.put("search","%" + productQueryParams.getSearch() + "%");
-        }
-        return sql;
-    }
-
     @Override
     public void updateStock(Integer productId, Integer stock) {
         String sql = "UPDATE product set stock = :stock , last_modified_date = :lastModifiedDate " +
@@ -159,6 +147,20 @@ public class ProductDaoImpl implements ProductDao {
         map.put("lastModifiedDate",new Date());
 
         namedParameterJdbcTemplate.update(sql,map);
+    }
 
+
+    private String addFilterSql(String sql,Map<String,Object> map,ProductQueryParams productQueryParams){
+        //增加分類條件
+        if(productQueryParams.getCategory()!=null){
+            sql += " AND category=:category";
+            map.put("category",productQueryParams.getCategory().toString());
+        }
+        //增加關鍵字條件
+        if (productQueryParams.getSearch()!=null) {
+            sql += " AND product_name LIKE :search";
+            map.put("search","%" + productQueryParams.getSearch() + "%");
+        }
+        return sql;
     }
 }
